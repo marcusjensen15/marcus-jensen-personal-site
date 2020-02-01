@@ -5,3 +5,12 @@
 <h6><%=@post.date %></h6>
 
 <p><%= @post.content_body %></p>
+
+
+<!-- <p>below 2 links will be hidden in the future unless the user is logged in </p> -->
+
+<p><%= link_to "Edit this post", edit_post_path(@post) %></p>
+
+<p><%= link_to "Delete", post_path(@post),
+  :data => {:confirm => "You sure?",
+  :method => "delete"} %></p>
