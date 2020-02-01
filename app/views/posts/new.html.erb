@@ -1,11 +1,13 @@
 <h1>Create a New Post</h1>
 
 <%= form_for @post do |f| %>
-  <%= f.label :title %>
-  <%= f.text_field :title %>
-  <%= f.label :content_body %>
-  <%= f.text_field :content_body %>
-  <%= f.label :date %>
-  <%= f.text_field :date %>
-  <%= f.submit  %>
+<%= f.label :title %>
+<%= f.text_field :title %>
+<%= f.label :content_body %>
+<%= f.text_field :content_body %>
+<%= f.label :date %>
+<%= f.text_field :date %>
+<%= f.submit  %>
 <% end %>
+
+<p><%= link_to "Go back to list of posts", posts_path %></p>

@@ -14,10 +14,11 @@ class PostsController < ApplicationController
     @post = Post.new(post_params)
     if @post.save
       # flash[:notice] = "Post was sucessfully added!" - haven't added flash messages yet, but will comment this out eventually
-      redirect_to :index
+      redirect_to posts_path
     else
       render :new
     end
+
   end
 
   def new
@@ -28,7 +29,7 @@ class PostsController < ApplicationController
   def update
     @post = Post.find(params[:id])
     if @post.update(post_params)
-      redirect_to :posts_path
+      redirect_to posts_path
     else
       render :edit
     end
@@ -42,7 +43,7 @@ class PostsController < ApplicationController
   def destroy
     @post = Post.find(params[:id])
     @post.destroy
-    redirect_to :index  
+    redirect_to posts_path
   end
 
   private
