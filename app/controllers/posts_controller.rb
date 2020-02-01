@@ -12,6 +12,8 @@ class PostsController < ApplicationController
 
   def create
     @post = Post.new(post_params)
+    @post.post_photo.attach(params[:post][:post_photo])
+
     if @post.save
       # flash[:notice] = "Post was sucessfully added!" - haven't added flash messages yet, but will comment this out eventually
       redirect_to posts_path

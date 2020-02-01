@@ -4,6 +4,9 @@
 
 <h6><%=@post.date %></h6>
 
+<%= image_tag @post.post_photo %>
+
+
 <p><%= @post.content_body %></p>
 
 <p><%= link_to "Go back to list of posts", posts_path %></p>
