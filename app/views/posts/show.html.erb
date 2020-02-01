@@ -4,7 +4,11 @@
 
 <h6><%=@post.date %></h6>
 
-<%= image_tag @post.post_photo %>
+
+<% if @post.post_photo.attached? %>
+  <%= image_tag @post.post_photo %>
+<% end %>
+
 
 
 <p><%= @post.content_body %></p>

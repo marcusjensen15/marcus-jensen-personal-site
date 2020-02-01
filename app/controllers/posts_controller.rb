@@ -31,6 +31,8 @@ class PostsController < ApplicationController
   def update
     @post = Post.find(params[:id])
     if @post.update(post_params)
+      @post.post_photo.attach(params[:post][:post_photo])
+
       redirect_to posts_path
     else
       render :edit
