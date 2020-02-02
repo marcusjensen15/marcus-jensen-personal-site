@@ -1,5 +1,8 @@
 class PostsController < ApplicationController
 
+#will use the authorize method to restrict views
+
+
   def show
     @post = Post.find(params[:id])
     render :show
