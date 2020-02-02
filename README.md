@@ -1,6 +1,6 @@
 # README
 
-You can add users through the rails console using User.Create(user params)
+You can add users through the rails console using User.create!(input user params in long form here)
 
 Things you may want to cover:
 
