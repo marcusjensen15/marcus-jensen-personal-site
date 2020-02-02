@@ -1,4 +1,8 @@
-<h1>My Posts</h1>
+
+
+<h1 class="jumbotron">My Posts</h1>
+
+
 
 <% if @posts.any? %>
 <ul>
@@ -9,6 +13,27 @@
 <% else %>
 <p>There are no posts yet</p>
 <% end %>
+
+<!-- <p>below here I'm experiementing with cards</p> -->
+
+<% if @posts.any? %>
+
+<% @posts.each do |post| %>
+<div class="card" style="width: 18rem;">
+  <img class="card-img-top" src=".../100px180/" alt="Card image cap">
+  <div class="card-body">
+    <h5 class="card-title"><%=post.title %></h5>
+    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+    <a href= "<%=post_path(post)%>" <class="btn btn-primary"> Go to this article</a>
+  </div>
+</div>
+
+<% end %>
+</ul>
+<% else %>
+<p>There are no posts yet</p>
+<% end %>
+
 
 <p class="alert alert-danger">Here is me attempting to add boostrap into this app</p>
 <!-- <p>In the future these 'create new post' link below will be hidden unless the user is logged in </p> -->
